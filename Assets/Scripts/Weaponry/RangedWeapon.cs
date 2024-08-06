@@ -4,14 +4,9 @@ using UnityEngine;
 
 namespace WeaponrySystem
 {
-    public abstract class RangedWeapon : MonoBehaviour, IWeapon
+    public abstract class RangedWeapon : Weapon
     {
-        public string Name { get; protected set; }
-        public int Damage { get; protected set; }
-        public float Range { get; protected set; }
-        public int AmmunitionCount { get; protected set; }
-
-        public virtual void Attack()
+        public virtual void Reload()
         {
 
         }
