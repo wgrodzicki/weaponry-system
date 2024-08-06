@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace WeaponrySystem
@@ -12,5 +10,8 @@ namespace WeaponrySystem
             Slash,
             Thrust
         }
+
+        [field: SerializeField]
+        public AttackType WeaponAttack { get; protected set; }
     }
 }

@@ -1,3 +1,4 @@
+
 namespace WeaponrySystem
 {
     public interface IEquippable
