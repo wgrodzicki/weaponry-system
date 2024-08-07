@@ -48,7 +48,7 @@ MonoBehaviour:
   <Damage>k__BackingField: 8
   <Range>k__BackingField: 20
   <IsEquipped>k__BackingField: 0
-  <WeaponHolding>k__BackingField: 1
+  _weaponHolding: 1
   OnEquipped:
     m_PersistentCalls:
       m_Calls: []

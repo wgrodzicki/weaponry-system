@@ -13,15 +13,16 @@ namespace WeaponrySystem
         public float Range { get; protected set; }
         [field: SerializeField]
         public bool IsEquipped { get; protected set; }
-        [field: SerializeField]
-        public HoldingType WeaponHolding { get; protected set; }
+
+        [SerializeField]
+        protected HoldingType _weaponHolding;
 
         // To be used by other systems in the game
         public UnityEvent OnEquipped;
         public UnityEvent OnUnequipped;
         public UnityEvent OnAttackPerformed;
 
-        public enum HoldingType
+        protected enum HoldingType
         {
             OneHanded,
             TwoHanded
@@ -43,9 +44,13 @@ namespace WeaponrySystem
             // To be implemented depending on weapon type
         }
 
+        /// <summary>
+        /// Indicates what weapon has been used for attack. For showcase purposes.
+        /// </summary>
+        /// <param name="weaponType"></param>
         protected void AttackDebug(string weaponType)
         {
-            Debug.Log($"Player attacked with {Name} of type {weaponType}");
+            Debug.Log($"Player attacked with {Name} of type {weaponType}.");
         }
     }
 }
