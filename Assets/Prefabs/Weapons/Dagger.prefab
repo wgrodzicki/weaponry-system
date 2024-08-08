@@ -47,8 +47,9 @@ MonoBehaviour:
   <Name>k__BackingField: TestDagger
   <Damage>k__BackingField: 5
   <Range>k__BackingField: 1
+  <Icon>k__BackingField: {fileID: 0}
   <IsEquipped>k__BackingField: 0
-  <WeaponHolding>k__BackingField: 0
+  _weaponHolding: 0
   OnEquipped:
     m_PersistentCalls:
       m_Calls: []

@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace WeaponrySystem
+namespace Equipment.Weaponry
 {
-    public abstract class Weapon : MonoBehaviour, IEquippable // Add other interfaces to implement, maybe IUsable, etc.
+    public abstract class Weapon : MonoBehaviour, IEquippable // Add other interfaces to implement, maybe IUsable, IPickable etc.
     {
         [field: SerializeField]
         public string Name { get; protected set; }
@@ -11,6 +11,8 @@ namespace WeaponrySystem
         public int Damage { get; protected set; }
         [field: SerializeField]
         public float Range { get; protected set; }
+        [field: SerializeField]
+        public Texture2D Icon { get; protected set; }
         [field: SerializeField]
         public bool IsEquipped { get; protected set; }
 

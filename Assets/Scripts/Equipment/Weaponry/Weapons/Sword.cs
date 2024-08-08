@@ -1,5 +1,5 @@
 
-namespace WeaponrySystem
+namespace Equipment.Weaponry
 {
     public class Sword : MeleeWeapon
     {
