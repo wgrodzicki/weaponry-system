@@ -22,7 +22,7 @@ namespace WeaponrySystem.Core
 
         private void OnEnable()
         {
-            _equipmentEventManager.WeaponSwapEvent += UpdateWeaponWindow;
+            _equipmentEventManager.WeaponEquipEvent += UpdateWeaponWindow;
 
             _weaponName = UIDocument.rootVisualElement.Q<Label>("WeaponName");
             _weaponWindow = UIDocument.rootVisualElement.Q<VisualElement>("WeaponWindow");
@@ -30,7 +30,7 @@ namespace WeaponrySystem.Core
 
         private void OnDisable()
         {
-            _equipmentEventManager.WeaponSwapEvent -= UpdateWeaponWindow;
+            _equipmentEventManager.WeaponEquipEvent -= UpdateWeaponWindow;
         }
     }
 }
