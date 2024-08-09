@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8cde4c62f497af4aaa5aa5bbd511434, type: 3}
-  m_Name: InputController
+  m_Script: {fileID: 11500000, guid: feacb9619c22a624b979e90dddcec441, type: 3}
+  m_Name: EquipmentEventManager
   m_EditorClassIdentifier: 

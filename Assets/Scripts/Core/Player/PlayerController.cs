@@ -1,8 +1,9 @@
-using Equipment.Weaponry;
 using System.Collections.Generic;
 using UnityEngine;
+using WeaponrySystem.Equipment;
+using WeaponrySystem.Equipment.Weaponry;
 
-namespace Core
+namespace WeaponrySystem.Core
 {
     public class PlayerController : MonoBehaviour
     {
@@ -11,7 +12,9 @@ namespace Core
         [SerializeField]
         private int _defaultWeaponIndex = 0;
         [SerializeField]
-        private InputController _inputController;
+        private InputEventManager _inputEventManager;
+        [SerializeField]
+        private EquipmentEventManager _equipmentEventManager;
 
         private int _currentWeapon = -1;
 
@@ -30,50 +33,46 @@ namespace Core
             if (nextWeapon > PlayerWeapons.Count - 1)
                 nextWeapon = 0;
 
-            PlayerWeapons[_currentWeapon].Equip(false);
-            PlayerWeapons[nextWeapon].Equip(true);
+            EquipWeapon(_currentWeapon, false);
             _currentWeapon = nextWeapon;
+            EquipWeapon(_currentWeapon, true);
 
             Debug.Log($"Current weapon: {PlayerWeapons[nextWeapon].Name}");
         }
 
         public void EquipWeapon(int weaponIndex, bool equip)
         {
-            if (weaponIndex < 0 || PlayerWeapons.Count == 0)
+            if (PlayerWeapons.Count == 0)
                 return;
 
             PlayerWeapons[weaponIndex].Equip(equip);
-            _currentWeapon = equip == true ? weaponIndex : -1;
+
+            if (equip)
+            {
+                _currentWeapon = weaponIndex;
+                _equipmentEventManager.OnWeaponEquip(PlayerWeapons[_currentWeapon].Name, PlayerWeapons[_currentWeapon].Icon);
+            }
+            else
+            {
+                _currentWeapon = -1;
+            }
         }
 
         private void OnEnable()
         {
-            if (_inputController == null)
-            {
-                Debug.LogError("PlayerController lacks InputController reference. Input will not be read.");
-                return;
-            }
-
-            _inputController.AttackEvent += Attack;
-            _inputController.SwapWeaponEvent += SwapWeapon;
+            _inputEventManager.AttackEvent += Attack;
+            _inputEventManager.SwapWeaponEvent += SwapWeapon;
         }
 
         private void Start()
         {
-            if (PlayerWeapons.Count > 0)
-            {
-                PlayerWeapons[_defaultWeaponIndex].Equip(true);
-                _currentWeapon = _defaultWeaponIndex;
-            }
+            EquipWeapon(_defaultWeaponIndex, true);
         }
 
         private void OnDisable()
         {
-            if (_inputController != null)
-            {
-                _inputController.AttackEvent -= Attack;
-                _inputController.SwapWeaponEvent -= SwapWeapon;
-            }
+            _inputEventManager.AttackEvent -= Attack;
+            _inputEventManager.SwapWeaponEvent -= SwapWeapon;
         }
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Equipment
+namespace WeaponrySystem.Equipment
 {
     public interface IEquippable
     {

@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-namespace Core
+namespace WeaponrySystem.Core
 {
-    [CreateAssetMenu(fileName = "InputController", menuName = "ScriptableObjects/InputController")]
-    public class InputController : ScriptableObject
+    [CreateAssetMenu(fileName = "InputEventManager", menuName = "Scriptable Objects/Input Event Manager")]
+    public class InputEventManager : ScriptableObject
     {
         public event UnityAction AttackEvent;
         public event UnityAction SwapWeaponEvent;

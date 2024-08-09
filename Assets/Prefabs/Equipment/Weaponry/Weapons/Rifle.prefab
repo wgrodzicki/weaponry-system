@@ -47,6 +47,8 @@ MonoBehaviour:
   <Name>k__BackingField: TestRifle
   <Damage>k__BackingField: 8
   <Range>k__BackingField: 20
+  <Icon>k__BackingField: {fileID: 2800000, guid: c4143a0c577422e4bbe467078d1e6fae,
+    type: 3}
   <IsEquipped>k__BackingField: 0
   _weaponHolding: 1
   OnEquipped:

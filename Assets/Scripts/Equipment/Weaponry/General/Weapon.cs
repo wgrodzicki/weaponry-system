@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Equipment.Weaponry
+namespace WeaponrySystem.Equipment.Weaponry
 {
     public abstract class Weapon : MonoBehaviour, IEquippable // Add other interfaces to implement, maybe IUsable, IPickable etc.
     {
@@ -33,11 +33,6 @@ namespace Equipment.Weaponry
         public virtual void Equip(bool equip)
         {
             IsEquipped = equip;
-
-            if (equip)
-                OnEquipped.Invoke();
-            else
-                OnUnequipped.Invoke();
         }
 
         public virtual void Attack()

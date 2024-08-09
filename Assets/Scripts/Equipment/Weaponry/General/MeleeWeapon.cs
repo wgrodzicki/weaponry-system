@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Equipment.Weaponry
+namespace WeaponrySystem.Equipment.Weaponry
 {
     public abstract class MeleeWeapon : Weapon
     {
