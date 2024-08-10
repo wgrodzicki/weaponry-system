@@ -50,7 +50,7 @@ namespace WeaponrySystem.Core
             if (equip)
             {
                 _currentWeapon = weaponIndex;
-                _equipmentEventManager.OnWeaponEquip(PlayerWeapons[_currentWeapon].Name, PlayerWeapons[_currentWeapon].Icon);
+                _equipmentEventManager.OnWeaponEquip(PlayerWeapons[_currentWeapon]);
             }
             else
             {

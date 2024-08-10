@@ -1,16 +1,17 @@
 using UnityEngine;
 using UnityEngine.Events;
+using WeaponrySystem.Equipment.Weaponry;
 
 namespace WeaponrySystem.Equipment
 {
     [CreateAssetMenu(fileName = "EquipmentEventManager", menuName = "Scriptable Objects/Equipment Event Manager")]
     public class EquipmentEventManager : ScriptableObject
     {
-        public event UnityAction<string, Texture2D> WeaponEquipEvent;
+        public event UnityAction<Weapon> WeaponEquipEvent;
 
-        public void OnWeaponEquip(string name, Texture2D icon)
+        public void OnWeaponEquip(Weapon weapon)
         {
-            WeaponEquipEvent?.Invoke(name, icon);
+            WeaponEquipEvent?.Invoke(weapon);
         }
     }
 }

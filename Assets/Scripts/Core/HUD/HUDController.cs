@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using WeaponrySystem.Equipment;
+using WeaponrySystem.Equipment.Weaponry;
 
 namespace WeaponrySystem.Core
 {
@@ -14,10 +15,10 @@ namespace WeaponrySystem.Core
         private Label _weaponName;
         private VisualElement _weaponWindow;
 
-        public void UpdateWeaponWindow(string name, Texture2D icon)
+        public void UpdateWeaponWindow(Weapon weapon)
         {
-            _weaponName.text = name;
-            _weaponWindow.style.backgroundImage = icon;
+            _weaponName.text = weapon.Name;
+            _weaponWindow.style.backgroundImage = weapon.Icon;
         }
 
         private void OnEnable()
