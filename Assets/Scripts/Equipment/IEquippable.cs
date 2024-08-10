@@ -1,11 +1,12 @@
-using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace WeaponrySystem.Equipment
 {
     public interface IEquippable
     {
+        string Name { get; }
         bool IsEquipped { get; }
-        Texture2D Icon { get; }
+        AssetReferenceTexture2D IconReference { get; }
 
         void Equip(bool equip);
     }

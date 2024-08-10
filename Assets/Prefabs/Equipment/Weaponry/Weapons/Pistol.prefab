@@ -44,11 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b465bb71c1d5e674b8dd45a6be6c60df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: TestPistol
+  <Name>k__BackingField: SamplePistol
   <Damage>k__BackingField: 4
   <Range>k__BackingField: 15
-  <Icon>k__BackingField: {fileID: 2800000, guid: c15268115c7446644a34183ccd2cec28,
-    type: 3}
+  <IconReference>k__BackingField:
+    m_AssetGUID: c15268115c7446644a34183ccd2cec28
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   <IsEquipped>k__BackingField: 0
   _weaponHolding: 0
   OnEquipped:

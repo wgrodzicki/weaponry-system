@@ -9,6 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/WeaponrySystemShowcase.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: e464677dc67e786488c3f91af5f604aa,
+      type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: edb022dff9d560445b24309a6aaef476,
       type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 17d80ba957509d74abe5564ceae1c105,

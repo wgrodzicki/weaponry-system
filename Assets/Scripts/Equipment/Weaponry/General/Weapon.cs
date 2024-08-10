@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 
 namespace WeaponrySystem.Equipment.Weaponry
@@ -11,10 +12,9 @@ namespace WeaponrySystem.Equipment.Weaponry
         public int Damage { get; protected set; }
         [field: SerializeField]
         public float Range { get; protected set; }
-        [field: SerializeField]
-        public Texture2D Icon { get; protected set; }
-        [field: SerializeField]
         public bool IsEquipped { get; protected set; }
+        [field: SerializeField]
+        public AssetReferenceTexture2D IconReference { get; protected set; }
 
         [SerializeField]
         protected HoldingType _weaponHolding;
@@ -48,6 +48,32 @@ namespace WeaponrySystem.Equipment.Weaponry
         protected void AttackDebug(string weaponType)
         {
             Debug.Log($"Player attacked with {Name} of type {weaponType}.");
+        }
+
+        protected virtual void Start()
+        {
+            LoadIcon(true);
+        }
+
+        protected virtual void OnDisable()
+        {
+            LoadIcon(false);
+        }
+
+        private void LoadIcon(bool load)
+        {
+            if (IconReference == null)
+                return;
+
+            if (load)
+            {
+                IconReference.LoadAssetAsync();
+            }
+            else
+            {
+                if (IconReference.IsValid())
+                    IconReference.ReleaseAsset();
+            }
         }
     }
 }

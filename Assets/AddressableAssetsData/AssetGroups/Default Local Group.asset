@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 8b6b7e10469341044afe9c070793b335
+  m_SerializeEntries:
+  - m_GUID: 5511eaa139a6a2e4789d620baadded08
+    m_Address: Assets/Navidtbt/Game Weapon Icon Pack/Single Icons/2 color/PNG/512/Katana
+      Type 01.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: beb9c1f4ccdb99140a9aec092d47faac
+    m_Address: "Assets/Navidtbt/Game Weapon Icon Pack/Single Icons/PNG/HandGun/Gray/512/Name=Knife,
+      Size=512, Rotation=30\xB0.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c15268115c7446644a34183ccd2cec28
+    m_Address: "Assets/Navidtbt/Game Weapon Icon Pack/Single Icons/PNG/HandGun/Gray/512/Name=Pistol
+      02, Size=512, Rotation=30\xB0.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c4143a0c577422e4bbe467078d1e6fae
+    m_Address: "Assets/Navidtbt/Game Weapon Icon Pack/Single Icons/PNG/Rifle/Gray/512/Name=Assault
+      rifle 05, Size=512, Rotation=30\xB0.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 4e46a5f38c0ad084a965d9b4d7d9959b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3343958585c01d74bbf5a211fa6fba96, type: 2}
+    - {fileID: 11400000, guid: 3fe81f9e30e06854696df2a25b06f49b, type: 2}

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace WeaponrySystem.Equipment.Weaponry
 {
-    public class Dagger : MeleeWeapon
+    public class Knife : MeleeWeapon
     {
         [SerializeField]
         private int _backStabAttackModifier;
@@ -11,7 +11,7 @@ namespace WeaponrySystem.Equipment.Weaponry
         {
             base.Attack();
 
-            AttackDebug(typeof(Dagger).ToString());
+            AttackDebug(typeof(Knife).ToString());
         }
 
         public void BackStabAttack()

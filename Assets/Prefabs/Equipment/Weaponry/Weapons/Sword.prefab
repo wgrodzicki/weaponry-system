@@ -44,28 +44,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e2c4d8ad79ba8409beab4d3f0f52ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: TestSword
+  <Name>k__BackingField: SampleSword
   <Damage>k__BackingField: 10
   <Range>k__BackingField: 2
-  <Icon>k__BackingField: {fileID: 2800000, guid: 5511eaa139a6a2e4789d620baadded08,
-    type: 3}
+  <IconReference>k__BackingField:
+    m_AssetGUID: 5511eaa139a6a2e4789d620baadded08
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   <IsEquipped>k__BackingField: 0
   _weaponHolding: 0
   OnEquipped:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnUnequipped:
     m_PersistentCalls:
       m_Calls: []

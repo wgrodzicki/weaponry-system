@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/HUDStyles.uss?fileID=7433441132597879392&amp;guid=2f1a7821ec895484fb0361a82802a7b5&amp;type=3#HUDStyles" />
     <ui:VisualElement name="MainContainer" style="flex-grow: 1; align-items: flex-start; justify-content: flex-end; height: auto;">
-        <ui:Label text="Label" name="WeaponName" class="iconName" style="left: 100px; bottom: 50px;" />
-        <ui:VisualElement name="WeaponWindow" class="iconWindow" style="flex-grow: initial; left: 50px;" />
+        <ui:Label text="Label" name="EquipmentName" class="iconName" style="left: 100px; bottom: 50px;" />
+        <ui:VisualElement name="EquipmentIconWindow" class="iconWindow" style="flex-grow: initial; left: 50px;" />
     </ui:VisualElement>
 </ui:UXML>

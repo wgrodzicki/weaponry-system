@@ -1,7 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 using WeaponrySystem.Equipment;
-using WeaponrySystem.Equipment.Weaponry;
 
 namespace WeaponrySystem.Core
 {
@@ -12,26 +12,32 @@ namespace WeaponrySystem.Core
         [SerializeField]
         private EquipmentEventManager _equipmentEventManager;
 
-        private Label _weaponName;
-        private VisualElement _weaponWindow;
+        private Label _equipmentName;
+        private VisualElement _equipmentWindow;
 
-        public void UpdateWeaponWindow(Weapon weapon)
+        public void UpdateIconWindow(IEquippable equippable)
         {
-            _weaponName.text = weapon.Name;
-            _weaponWindow.style.backgroundImage = weapon.Icon;
+            StartCoroutine(WaitForIcon(equippable));
+        }
+
+        private IEnumerator WaitForIcon(IEquippable equippable)
+        {
+            yield return new WaitUntil(() => equippable.IconReference.Asset != null);
+            _equipmentName.text = equippable.Name;
+            _equipmentWindow.style.backgroundImage = equippable.IconReference.Asset as Texture2D;
         }
 
         private void OnEnable()
         {
-            _equipmentEventManager.WeaponEquipEvent += UpdateWeaponWindow;
+            _equipmentEventManager.WeaponEquipEvent += UpdateIconWindow;
 
-            _weaponName = UIDocument.rootVisualElement.Q<Label>("WeaponName");
-            _weaponWindow = UIDocument.rootVisualElement.Q<VisualElement>("WeaponWindow");
+            _equipmentName = UIDocument.rootVisualElement.Q<Label>("EquipmentName");
+            _equipmentWindow = UIDocument.rootVisualElement.Q<VisualElement>("EquipmentIconWindow");
         }
 
         private void OnDisable()
         {
-            _equipmentEventManager.WeaponEquipEvent -= UpdateWeaponWindow;
+            _equipmentEventManager.WeaponEquipEvent -= UpdateIconWindow;
         }
     }
 }
