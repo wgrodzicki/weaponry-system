@@ -7,11 +7,11 @@ namespace WeaponrySystem.Equipment
     [CreateAssetMenu(fileName = "EquipmentEventManager", menuName = "Scriptable Objects/Equipment Event Manager")]
     public class EquipmentEventManager : ScriptableObject
     {
-        public event UnityAction<Weapon> WeaponEquipEvent;
+        public event UnityAction<IEquippable> ItemEquipEvent;
 
-        public void OnWeaponEquip(Weapon weapon)
+        public void OnItemEquip(IEquippable item)
         {
-            WeaponEquipEvent?.Invoke(weapon);
+            ItemEquipEvent?.Invoke(item);
         }
     }
 }

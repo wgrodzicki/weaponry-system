@@ -29,7 +29,7 @@ namespace WeaponrySystem.Core
 
         private void OnEnable()
         {
-            _equipmentEventManager.WeaponEquipEvent += UpdateIconWindow;
+            _equipmentEventManager.ItemEquipEvent += UpdateIconWindow;
 
             _equipmentName = UIDocument.rootVisualElement.Q<Label>("EquipmentName");
             _equipmentWindow = UIDocument.rootVisualElement.Q<VisualElement>("EquipmentIconWindow");
@@ -37,7 +37,7 @@ namespace WeaponrySystem.Core
 
         private void OnDisable()
         {
-            _equipmentEventManager.WeaponEquipEvent -= UpdateIconWindow;
+            _equipmentEventManager.ItemEquipEvent -= UpdateIconWindow;
         }
     }
 }
