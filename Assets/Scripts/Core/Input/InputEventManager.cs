@@ -45,6 +45,9 @@ namespace WeaponrySystem.Core
 
         private void OnEnable()
         {
+            if (InputSystem.actions == null) // Avoid null refs on first loads in the Editor
+                return;
+
             // Attack
             _attackAction = InputSystem.actions.FindAction("Attack");
 
