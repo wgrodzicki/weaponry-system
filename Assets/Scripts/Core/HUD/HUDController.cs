@@ -1,43 +1,56 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
-using WeaponrySystem.Equipment;
+using WeaponrySystem.Items;
+using WeaponrySystem.Items.Weapons;
 
 namespace WeaponrySystem.Core
 {
+    /// <summary>
+    /// A class that controls the behaviour and display of the game's HUD.
+    /// </summary>
     public class HUDController : MonoBehaviour
     {
+        [Tooltip("UIDocument associated with this HUD.")]
         public UIDocument UIDocument;
-
+        [Tooltip("ItemEventManager to receive info about item-related events.")]
         [SerializeField]
-        private EquipmentEventManager _equipmentEventManager;
+        private ItemEventManager _itemEventManager;
 
-        private Label _equipmentName;
-        private VisualElement _equipmentWindow;
+        private Label _weaponName;
+        private VisualElement _weaponIcon;
 
-        public void UpdateIconWindow(IEquippable equippable)
+        /// <summary>
+        /// Displays icon and name of the given weapon in the HUD.
+        /// </summary>
+        /// <param name="weapon"></param>
+        public void DisplayWeaponIcon(Weapon weapon)
         {
-            StartCoroutine(WaitForIcon(equippable));
+            StartCoroutine(WaitForIcon(weapon, _weaponName, _weaponIcon));
         }
 
-        private IEnumerator WaitForIcon(IEquippable equippable)
+        private IEnumerator WaitForIcon(IEquippable equippable, Label itemName, VisualElement itemIcon)
         {
             yield return new WaitUntil(() => equippable.IconReference.Asset != null);
-            _equipmentName.text = equippable.Name;
-            _equipmentWindow.style.backgroundImage = equippable.IconReference.Asset as Texture2D;
+
+            itemName.text = equippable.Name;
+            itemIcon.style.backgroundImage = equippable.IconReference.Asset as Texture2D;
         }
 
         private void OnEnable()
         {
-            _equipmentEventManager.ItemEquipEvent += UpdateIconWindow;
+            if (_itemEventManager == null)
+                Debug.LogError("ItemEventManager on HUDController is missing. HUD will not work correctly!");
 
-            _equipmentName = UIDocument.rootVisualElement.Q<Label>("EquipmentName");
-            _equipmentWindow = UIDocument.rootVisualElement.Q<VisualElement>("EquipmentIconWindow");
+            _itemEventManager.WeaponEquipEvent += DisplayWeaponIcon;
+
+            _weaponName = UIDocument.rootVisualElement.Q<Label>("WeaponNameLabel");
+            _weaponIcon = UIDocument.rootVisualElement.Q<VisualElement>("WeaponIconElement");
         }
 
         private void OnDisable()
         {
-            _equipmentEventManager.ItemEquipEvent -= UpdateIconWindow;
+            _itemEventManager.WeaponEquipEvent -= DisplayWeaponIcon;
         }
     }
 }

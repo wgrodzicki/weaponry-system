@@ -21,25 +21,29 @@ MonoBehaviour:
     m_Address: Assets/Navidtbt/Game Weapon Icon Pack/Single Icons/2 color/PNG/512/Katana
       Type 01.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Icon
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: beb9c1f4ccdb99140a9aec092d47faac
     m_Address: "Assets/Navidtbt/Game Weapon Icon Pack/Single Icons/PNG/HandGun/Gray/512/Name=Knife,
       Size=512, Rotation=30\xB0.png"
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Icon
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c15268115c7446644a34183ccd2cec28
     m_Address: "Assets/Navidtbt/Game Weapon Icon Pack/Single Icons/PNG/HandGun/Gray/512/Name=Pistol
       02, Size=512, Rotation=30\xB0.png"
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Icon
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c4143a0c577422e4bbe467078d1e6fae
     m_Address: "Assets/Navidtbt/Game Weapon Icon Pack/Single Icons/PNG/Rifle/Gray/512/Name=Assault
       rifle 05, Size=512, Rotation=30\xB0.png"
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Icon
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4e46a5f38c0ad084a965d9b4d7d9959b, type: 2}

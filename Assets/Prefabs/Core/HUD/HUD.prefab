@@ -63,5 +63,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIDocument: {fileID: 6652769116986479273}
-  _equipmentEventManager: {fileID: 11400000, guid: 1ee80bd34b5c72d448ad68b5a7b85449,
-    type: 2}
+  _itemEventManager: {fileID: 11400000, guid: c515469cd474f98449c9c521b3bd176d, type: 2}
