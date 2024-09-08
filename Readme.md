@@ -41,3 +41,4 @@ The Item Event Manager gathers events related to item usage or change and, in a 
 Created by Wojciech Grodzicki.
 
 - Sample weapon icons by Navidtbt via Unity Asset Store ([melee](https://assetstore.unity.com/packages/2d/gui/icons/game-weapon-icons-package-285331), [ranged](https://assetstore.unity.com/packages/2d/gui/icons/gun-icons-package-287096))
+- Cover created using AI from [OpenArt](https://openart.ai/home)
