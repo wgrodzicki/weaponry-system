@@ -1,0 +1,67 @@
+@startuml
+
+!theme reddress-darkred
+
+IUsable <|.. Weapon
+IEquippable <|.. Weapon
+Weapon <|-- MeleeWeapon
+Weapon <|-- RangedWeapon
+MeleeWeapon <|-- Knife
+MeleeWeapon <|-- Sword
+RangedWeapon <|-- Pistol
+RangedWeapon <|-- Rifle
+
+interface IUsable
+{
+    {method} +void Use()
+}
+
+interface IEquippable
+{
+    {field} +string Name
+    {field} +AssetReferenceTexture2D IconReference
+}
+
+abstract class Weapon
+{
+    {field} +int Damage
+    {field} +float Range
+
+    {method} -void LoadIcon(bool)
+}
+
+abstract class MeleeWeapon
+{
+    {field} +AttackType WeaponAttack
+    {field} +enum AttackType
+}
+
+abstract class RangedWeapon
+{
+    {field} +int AmmunitionCount
+
+    {method} +void Reload(int)
+}
+
+class Knife
+{
+    {method} +void BackStabAttack
+}
+
+class Sword
+{
+
+}
+
+class Pistol
+{
+
+}
+
+class Rifle
+{
+    {field} +bool HasScope
+
+}
+
+@enduml

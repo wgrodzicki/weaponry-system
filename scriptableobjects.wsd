@@ -1,0 +1,32 @@
+@startuml
+
+!theme reddress-darkred
+
+skinparam rectangle {
+    roundCorner 15,
+    defaultTextAlignment center
+}
+
+rectangle InputSystem
+rectangle HUDContoller
+
+rectangle ScriptableObjectInput [
+    Input Event Manager
+    as ScriptableObject
+]
+
+rectangle ScriptableObjectItem [
+    Item Event Manager
+    as ScriptableObject
+]
+
+rectangle PlayerController
+
+InputSystem --> ScriptableObjectInput
+ScriptableObjectInput <-- PlayerController
+
+PlayerController --> ScriptableObjectItem
+ScriptableObjectItem <-- HUDContoller
+
+
+@enduml
