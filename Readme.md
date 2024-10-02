@@ -12,7 +12,7 @@ Unity, C#, UI Toolkit, InputSystem, Addressables.
 
 #### **Extensible architecture**
 
-The system uses the OOP principles to promote extesibility. At the core of the system are interfaces and abstract classes for general weapon types that can serve as the base for specific items used in the game. It creates the following hierarchy of classes:
+The system uses the OOP principles to promote extensibility. At the core of the system are interfaces and abstract classes for general weapon types that can serve as the base for specific items used in the game. It creates the following hierarchy of classes:
 
 ![](Images/weaponry-hierarchy.png)
 
@@ -22,11 +22,11 @@ The system makes use of the Unity's Addressables which allow to save memory by l
 
 #### **Modern input and UI**
 
-The system uses the new Unity InputSystem as well as the UI Toolkit for HUD, providing the most up-to-date solutions in these areas.
+The system uses the Unity InputSystem as well as the UI Toolkit for HUD, providing the most up-to-date solutions in these areas.
 
 #### **Scriptable objects as the middleman**
 
-The system includes the basis for the input and HUD managers. These crucial parts of the game are often implemented using the Singleton pattern, however, it can lead to a lot of downsides and high coupling. Therefore, I decided to use ScriptableObjects as event managers (following [this example](https://www.youtube.com/watch?v=WLDgtRNK2VE) by Unity) that serve as connectors between and systems without the need of the classes to know about one another.
+The system includes the basis for the input and HUD managers. These crucial parts of the game are sometimes implemented using the Singleton pattern, however, it can lead to a lot of downsides and high coupling. Therefore, I decided to use ScriptableObjects as event managers (following [this example](https://www.youtube.com/watch?v=WLDgtRNK2VE) by Unity) that serve as connectors between different parts of the system without the need of the classes to know about one another.
 
 The Input Event Manager serves as a hub for input events from the Unity's InputSystem and exposes UnityActions that other classes (e.g. Player) can subscribe to and execute their specific methods. For example, when the mouse button is clicked, the Input Event Manager invokes the AttackEvent, which the PlayerController subscribes to and calls its Attack() method.
 
